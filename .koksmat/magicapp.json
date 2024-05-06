@@ -1,0 +1,2274 @@
+{
+  "name": "files",
+  "type": "magicservice",
+  "namespace": "files",
+  "organisation": "magicbutton",
+  "magicappversion": "v0.0.1",
+  "description": "A simple app to manage users, groups and memberships",
+  "baseattributes": {
+    "urlrecord": [
+      {
+        "name": "tenant",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "record": [
+      {
+        "name": "tenant",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  "entities": {
+    "platformcategory": {
+      "name": "platformcategory",
+      "description": "PlatformCategory",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": null
+    },
+    "platform": {
+      "name": "platform",
+      "description": "Platform",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "category",
+          "type": "reference",
+          "entity": {
+            "name": "platformcategory",
+            "description": "PlatformCategory",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              }
+            ],
+            "additionalattributes": null
+          },
+          "required": true
+        }
+      ]
+    },
+    "container": {
+      "name": "container",
+      "description": "Container",
+      "parent": {
+        "name": "platform",
+        "description": "Platform",
+        "baselineattributes": [
+          {
+            "name": "tenant",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "url",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "additionalattributes": [
+          {
+            "name": "category",
+            "type": "reference",
+            "entity": {
+              "name": "platformcategory",
+              "description": "PlatformCategory",
+              "baselineattributes": [
+                {
+                  "name": "tenant",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "required": false
+                }
+              ],
+              "additionalattributes": null
+            },
+            "required": true
+          }
+        ]
+      },
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "level1",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level3",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level4",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level5",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level6",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level7",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level8",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level9",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level10",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level11",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level12",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level13",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level14",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level15",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level16",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    "file": {
+      "name": "file",
+      "description": "File",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "int",
+          "required": true
+        },
+        {
+          "name": "extension",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "createdby",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "created",
+          "type": "datetime",
+          "required": false
+        },
+        {
+          "name": "modified",
+          "type": "datetime",
+          "required": false
+        },
+        {
+          "name": "modifiedby",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "version",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "published",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "level1",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level3",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level4",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level5",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level6",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level7",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level8",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level9",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level10",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level11",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level12",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level13",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level14",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level15",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "level16",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    "user": {
+      "name": "user",
+      "description": "User",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "email",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "relation": {
+      "name": "relation",
+      "description": "Relation",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "user",
+          "type": "reference",
+          "entity": {
+            "name": "user",
+            "description": "User",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "email",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "file",
+          "type": "array",
+          "entity": {
+            "name": "file",
+            "description": "File",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "type",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "size",
+                "type": "int",
+                "required": true
+              },
+              {
+                "name": "extension",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "createdby",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "created",
+                "type": "datetime",
+                "required": false
+              },
+              {
+                "name": "modified",
+                "type": "datetime",
+                "required": false
+              },
+              {
+                "name": "modifiedby",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "version",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "level1",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level2",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level3",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level4",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level5",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level6",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level7",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level8",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level9",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level10",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level11",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level12",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level13",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level14",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level15",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level16",
+                "type": "string",
+                "required": false
+              }
+            ]
+          },
+          "required": false
+        }
+      ]
+    },
+    "importdata": {
+      "name": "importdata",
+      "description": "Import",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "user",
+          "type": "reference",
+          "entity": {
+            "name": "user",
+            "description": "User",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "email",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "data",
+          "type": "json",
+          "required": true
+        }
+      ]
+    },
+    "importsharepointsite": {
+      "name": "importsharepointsite",
+      "description": "Import SharePoint Site",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "isteamsconnected",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "localeid",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "hubsiteid",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "lastcontentmodified",
+          "type": "datetime",
+          "required": false
+        },
+        {
+          "name": "releatedgroupid",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "groupid",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "isteamschannelconnected",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "ishubsite",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "sharingcapability",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "owner",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  },
+  "models": {
+    "itemMethods": [
+      {
+        "name": "read",
+        "description": "Read a single item",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "The id of the item",
+            "type": "int",
+            "required": true
+          }
+        ],
+        "returns": {
+          "type": "object"
+        }
+      },
+      {
+        "name": "create",
+        "description": "Create a new item",
+        "parameters": [
+          {
+            "name": "item",
+            "description": "The item to create",
+            "type": "object",
+            "required": true
+          }
+        ],
+        "returns": {
+          "type": "object"
+        }
+      },
+      {
+        "name": "update",
+        "description": "Update an existing item",
+        "parameters": [
+          {
+            "name": "item",
+            "description": "The item to update",
+            "type": "object",
+            "required": true
+          }
+        ],
+        "returns": {
+          "type": "object"
+        }
+      },
+      {
+        "name": "delete",
+        "description": "Delete an existing item",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "The id of the item",
+            "type": "int",
+            "required": true
+          }
+        ],
+        "returns": {
+          "type": "void"
+        }
+      },
+      {
+        "name": "search",
+        "description": "Search for items",
+        "parameters": [
+          {
+            "name": "query",
+            "description": "The search query",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "returns": {
+          "type": "page"
+        }
+      }
+    ]
+  },
+  "services": [
+    {
+      "name": "user",
+      "description": "Manage users",
+      "entity": {
+        "type": "record",
+        "model": "user",
+        "objectname": "User",
+        "entity": {
+          "name": "user",
+          "description": "User",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "platformcategory",
+      "description": "Manage platform categories",
+      "entity": {
+        "type": "record",
+        "model": "platformcategory",
+        "objectname": "PlatformCategory",
+        "entity": {
+          "name": "platformcategory",
+          "description": "PlatformCategory",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": null
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "platform",
+      "description": "Manage platforms",
+      "entity": {
+        "type": "record",
+        "model": "platform",
+        "objectname": "Platform",
+        "entity": {
+          "name": "platform",
+          "description": "Platform",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "category",
+              "type": "reference",
+              "entity": {
+                "name": "platformcategory",
+                "description": "PlatformCategory",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  }
+                ],
+                "additionalattributes": null
+              },
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "description": "Manage containers",
+      "entity": {
+        "type": "record",
+        "model": "container",
+        "objectname": "Container",
+        "entity": {
+          "name": "container",
+          "description": "Container",
+          "parent": {
+            "name": "platform",
+            "description": "Platform",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "category",
+                "type": "reference",
+                "entity": {
+                  "name": "platformcategory",
+                  "description": "PlatformCategory",
+                  "baselineattributes": [
+                    {
+                      "name": "tenant",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "type": "string",
+                      "required": false
+                    }
+                  ],
+                  "additionalattributes": null
+                },
+                "required": true
+              }
+            ]
+          },
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "level1",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level2",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level3",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level4",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level5",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level6",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level7",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level8",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level9",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level10",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level11",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level12",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level13",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level14",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level15",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level16",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "relation",
+      "description": "Manage relations",
+      "entity": {
+        "type": "record",
+        "model": "relation",
+        "objectname": "Relation",
+        "entity": {
+          "name": "relation",
+          "description": "Relation",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "user",
+              "type": "reference",
+              "entity": {
+                "name": "user",
+                "description": "User",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "email",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "date",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "file",
+              "type": "array",
+              "entity": {
+                "name": "file",
+                "description": "File",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "type",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "size",
+                    "type": "int",
+                    "required": true
+                  },
+                  {
+                    "name": "extension",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "createdby",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "created",
+                    "type": "datetime",
+                    "required": false
+                  },
+                  {
+                    "name": "modified",
+                    "type": "datetime",
+                    "required": false
+                  },
+                  {
+                    "name": "modifiedby",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "version",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "published",
+                    "type": "boolean",
+                    "required": false
+                  },
+                  {
+                    "name": "level1",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level2",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level3",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level4",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level5",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level6",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level7",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level8",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level9",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level10",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level11",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level12",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level13",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level14",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level15",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level16",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              },
+              "required": false
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "file",
+      "description": "Manage files",
+      "entity": {
+        "type": "record",
+        "model": "file",
+        "objectname": "File",
+        "entity": {
+          "name": "file",
+          "description": "File",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "size",
+              "type": "int",
+              "required": true
+            },
+            {
+              "name": "extension",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "createdby",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "created",
+              "type": "datetime",
+              "required": false
+            },
+            {
+              "name": "modified",
+              "type": "datetime",
+              "required": false
+            },
+            {
+              "name": "modifiedby",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "version",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "published",
+              "type": "boolean",
+              "required": false
+            },
+            {
+              "name": "level1",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level2",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level3",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level4",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level5",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level6",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level7",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level8",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level9",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level10",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level11",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level12",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level13",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level14",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level15",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "level16",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "importdata",
+      "description": "Import data",
+      "entity": {
+        "type": "record",
+        "model": "importdata",
+        "objectname": "ImportData",
+        "entity": {
+          "name": "importdata",
+          "description": "Import",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "user",
+              "type": "reference",
+              "entity": {
+                "name": "user",
+                "description": "User",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "email",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "data",
+              "type": "json",
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    }
+  ]
+}
