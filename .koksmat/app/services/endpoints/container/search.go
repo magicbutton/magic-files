@@ -20,6 +20,6 @@ import (
 func ContainerSearch(query string) (*Page[containermodel.Container], error) {
     log.Println("Calling Containersearch")
 
-    return applogic.Search[database.Container, containermodel.Container]("name", query, applogic.MapContainerOutgoing)
+    return applogic.Search[database.Container, containermodel.Container]("searchindex", query, applogic.MapContainerOutgoing)
 
 }

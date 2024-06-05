@@ -19,12 +19,15 @@ type Platform struct {
 
 	ID             int     `bun:"id,pk,autoincrement"`
 	CreatedAt      time.Time `bun:",nullzero,notnull,default:current_timestamp"`
+	CreatedBy      string `bun:"created_by,"`
 	UpdatedAt      time.Time `bun:",nullzero,notnull,default:current_timestamp"`
+	UpdatedBy      string `bun:"updated_by,"`
 	DeletedAt      time.Time `bun:",soft_delete,nullzero"`
         Tenant string `bun:"tenant"`
     Name string `bun:"name"`
     Description string `bun:"description"`
     Url string `bun:"url"`
+    Searchindex string `bun:"searchindex"`
     Category_id int `bun:"category_id"`
 
 }

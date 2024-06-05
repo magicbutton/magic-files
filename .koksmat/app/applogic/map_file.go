@@ -20,7 +20,9 @@ func MapFileOutgoing(db database.File) filemodel.File {
     return filemodel.File{
         ID:        db.ID,
         CreatedAt: db.CreatedAt,
+        CreatedBy: db.CreatedBy,
         UpdatedAt: db.UpdatedAt,
+        UpdatedBy: db.UpdatedBy,
                 Tenant : db.Tenant,
         Name : db.Name,
         Description : db.Description,
@@ -54,7 +56,9 @@ func MapFileIncoming(in filemodel.File) database.File {
     return database.File{
         ID:        in.ID,
         CreatedAt: in.CreatedAt,
+        CreatedBy: in.CreatedBy,
         UpdatedAt: in.UpdatedAt,
+        UpdatedBy: in.UpdatedBy,
                 Tenant : in.Tenant,
         Name : in.Name,
         Description : in.Description,
@@ -80,6 +84,7 @@ func MapFileIncoming(in filemodel.File) database.File {
         Level14 : in.Level14,
         Level15 : in.Level15,
         Level16 : in.Level16,
+        Searchindex : in.Name,
 
     }
 }

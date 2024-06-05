@@ -47,7 +47,7 @@ if (len(payload.Args) < 2) {
 
 
     
-    result,err := importdata.ImportDataRead(StrToInt(payload.Args[1]))
+    result,err := importdata.ImportDataRead(payload.Args[1])
     if (err != nil) {
         log.Println("Error", err)
         ServiceResponseError(req, fmt.Sprintf("Error calling ImportDataRead: %s", err))
@@ -133,7 +133,7 @@ if (len(payload.Args) < 2) {
 }
 
 
-            err :=  importdata.ImportDataDelete(StrToInt(payload.Args[1]))
+            err :=  importdata.ImportDataDelete(payload.Args[1])
             if (err != nil) {
                 log.Println("Error", err)
                 ServiceResponseError(req, fmt.Sprintf("Error calling ImportDataDelete: %s", err))

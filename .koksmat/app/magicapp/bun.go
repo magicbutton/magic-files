@@ -17,14 +17,19 @@ func OpenDatabase() {
 	utils.Setup("./.env")
 
 	dsn := viper.GetString("POSTGRES_DB")
+	verbose := viper.GetBool("VERBOSE")
 	config, err := pgx.ParseConfig(dsn)
 	if err != nil {
 		log.Fatal(err)
 
 	}
+
+	//log.Println("Connecting to database", dsn)
 	config.PreferSimpleProtocol = true
 	sqldb := stdlib.OpenDB(*config)
 	utils.Db = bun.NewDB(sqldb, pgdialect.New())
-	utils.Db.AddQueryHook(bundebug.NewQueryHook(bundebug.WithVerbose(true)))
+	if verbose {
+		utils.Db.AddQueryHook(bundebug.NewQueryHook(bundebug.WithVerbose(true)))
+	}
 
 }

@@ -20,6 +20,6 @@ import (
 func PlatformSearch(query string) (*Page[platformmodel.Platform], error) {
     log.Println("Calling Platformsearch")
 
-    return applogic.Search[database.Platform, platformmodel.Platform]("name", query, applogic.MapPlatformOutgoing)
+    return applogic.Search[database.Platform, platformmodel.Platform]("searchindex", query, applogic.MapPlatformOutgoing)
 
 }

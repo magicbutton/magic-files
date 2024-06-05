@@ -20,7 +20,9 @@ func MapPlatformOutgoing(db database.Platform) platformmodel.Platform {
     return platformmodel.Platform{
         ID:        db.ID,
         CreatedAt: db.CreatedAt,
+        CreatedBy: db.CreatedBy,
         UpdatedAt: db.UpdatedAt,
+        UpdatedBy: db.UpdatedBy,
                 Tenant : db.Tenant,
         Name : db.Name,
         Description : db.Description,
@@ -34,12 +36,15 @@ func MapPlatformIncoming(in platformmodel.Platform) database.Platform {
     return database.Platform{
         ID:        in.ID,
         CreatedAt: in.CreatedAt,
+        CreatedBy: in.CreatedBy,
         UpdatedAt: in.UpdatedAt,
+        UpdatedBy: in.UpdatedBy,
                 Tenant : in.Tenant,
         Name : in.Name,
         Description : in.Description,
         Url : in.Url,
                 Category_id : in.Category_id,
+        Searchindex : in.Name,
 
     }
 }

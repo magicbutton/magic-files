@@ -20,4 +20,10 @@ func RegisterServiceEndpoints(root micro.Group) {
         root.AddEndpoint("relation", micro.HandlerFunc(services.HandleRelationRequests))
         root.AddEndpoint("file", micro.HandlerFunc(services.HandleFileRequests))
         root.AddEndpoint("importdata", micro.HandlerFunc(services.HandleImportDataRequests))
+        root.AddEndpoint("importsharepointsite", micro.HandlerFunc(services.HandleImportSharePointSiteRequests))
+        root.AddEndpoint("importgroups", micro.HandlerFunc(services.HandleImportGroupsRequests))
+        root.AddEndpoint("importrelations", micro.HandlerFunc(services.HandleImportRelationsRequests))
+        root.AddEndpoint("importsharedmailbox", micro.HandlerFunc(services.HandleImportSharedMailboxRequests))
+        root.AddEndpoint("job", micro.HandlerFunc(services.HandleJobRequests))
+        root.AddEndpoint("batch", micro.HandlerFunc(services.HandleBatchRequests))
     }

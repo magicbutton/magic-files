@@ -1,11 +1,15 @@
 "use client";
 import type { Metadata } from "next";
 import "./globals.css";
-import { MagicboxProvider } from "@/koksmat/magicbox-providers";
-import { MSALWrapper } from "@/koksmat/msal/auth";
+import { MagicboxProvider } from "@/app/koksmat/magicbox-providers";
+import { MSALWrapper } from "@/app/koksmat/msal/auth";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
+import { ServiceInspector } from "@/app/koksmat/components/service-inspector";
+
+import AppRoot from "@/app/koksmat/components/approot";
+import { ToastProvider } from "@radix-ui/react-toast";
 
 export default function RootLayout2({
   children,
@@ -32,8 +36,11 @@ export default function RootLayout2({
         >
           <MagicboxProvider>
             <MSALWrapper>
-              {children}
+              <AppRoot>{children}</AppRoot>
+
               <TailwindIndicator />
+              <ServiceInspector />
+              <ToastProvider />
             </MSALWrapper>
           </MagicboxProvider>
         </ThemeProvider>

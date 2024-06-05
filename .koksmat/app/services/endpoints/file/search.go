@@ -20,6 +20,6 @@ import (
 func FileSearch(query string) (*Page[filemodel.File], error) {
     log.Println("Calling Filesearch")
 
-    return applogic.Search[database.File, filemodel.File]("name", query, applogic.MapFileOutgoing)
+    return applogic.Search[database.File, filemodel.File]("searchindex", query, applogic.MapFileOutgoing)
 
 }

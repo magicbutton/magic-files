@@ -1,29 +1,25 @@
-/* 
+/*
 File have been automatically created. To prevent the file from getting overwritten
-set the Front Matter property ´keep´ to ´true´ syntax for the code snippet
+set the Front Matter property ´´keep´´ to ´´true´´ syntax for the code snippet
 ---
 keep: false
 ---
 */
-//generator:  noma3
+//generator:  noma3.update.v2
 package importdata
-// noma2    
+
 import (
-	"log"
-    "errors"
+    "log"
+
+    "github.com/magicbutton/magic-files/applogic"
+    "github.com/magicbutton/magic-files/database"
     "github.com/magicbutton/magic-files/services/models/importdatamodel"
-    )
 
+)
 
-func ImportDataUpdate(item importdatamodel.ImportData ) (*importdatamodel.ImportData,error) {
-log.Println("Calling ImportDataUpdate")
-    
-    
-    
-    return nil,errors.New("Not implemented")
+func ImportDataUpdate(item importdatamodel.ImportData) (*importdatamodel.ImportData, error) {
+    log.Println("Calling ImportDataupdate")
 
-
-
+    return applogic.Update[database.ImportData, importdatamodel.ImportData](item.ID,item, applogic.MapImportDataIncoming, applogic.MapImportDataOutgoing)
 
 }
-    

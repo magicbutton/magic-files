@@ -26,7 +26,9 @@ func (r *Platform) Marshal() ([]byte, error) {
 type Platform struct {
     ID        int    `json:"id"`
     CreatedAt time.Time `json:"created_at"`
+    CreatedBy string `json:"created_by"`
     UpdatedAt time.Time `json:"updated_at"`
+    UpdatedBy string `json:"updated_by"`
         Tenant string `json:"tenant"`
     Name string `json:"name"`
     Description string `json:"description"`

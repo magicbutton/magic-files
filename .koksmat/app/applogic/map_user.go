@@ -20,7 +20,9 @@ func MapUserOutgoing(db database.User) usermodel.User {
     return usermodel.User{
         ID:        db.ID,
         CreatedAt: db.CreatedAt,
+        CreatedBy: db.CreatedBy,
         UpdatedAt: db.UpdatedAt,
+        UpdatedBy: db.UpdatedBy,
                 Tenant : db.Tenant,
         Name : db.Name,
         Description : db.Description,
@@ -34,12 +36,15 @@ func MapUserIncoming(in usermodel.User) database.User {
     return database.User{
         ID:        in.ID,
         CreatedAt: in.CreatedAt,
+        CreatedBy: in.CreatedBy,
         UpdatedAt: in.UpdatedAt,
+        UpdatedBy: in.UpdatedBy,
                 Tenant : in.Tenant,
         Name : in.Name,
         Description : in.Description,
         Url : in.Url,
         Email : in.Email,
+        Searchindex : in.Name,
 
     }
 }

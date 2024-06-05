@@ -47,7 +47,7 @@ if (len(payload.Args) < 2) {
 
 
     
-    result,err := platform.PlatformRead(StrToInt(payload.Args[1]))
+    result,err := platform.PlatformRead(payload.Args[1])
     if (err != nil) {
         log.Println("Error", err)
         ServiceResponseError(req, fmt.Sprintf("Error calling PlatformRead: %s", err))
@@ -133,7 +133,7 @@ if (len(payload.Args) < 2) {
 }
 
 
-            err :=  platform.PlatformDelete(StrToInt(payload.Args[1]))
+            err :=  platform.PlatformDelete(payload.Args[1])
             if (err != nil) {
                 log.Println("Error", err)
                 ServiceResponseError(req, fmt.Sprintf("Error calling PlatformDelete: %s", err))

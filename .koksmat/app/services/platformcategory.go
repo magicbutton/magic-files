@@ -47,7 +47,7 @@ if (len(payload.Args) < 2) {
 
 
     
-    result,err := platformcategory.PlatformCategoryRead(StrToInt(payload.Args[1]))
+    result,err := platformcategory.PlatformCategoryRead(payload.Args[1])
     if (err != nil) {
         log.Println("Error", err)
         ServiceResponseError(req, fmt.Sprintf("Error calling PlatformCategoryRead: %s", err))
@@ -133,7 +133,7 @@ if (len(payload.Args) < 2) {
 }
 
 
-            err :=  platformcategory.PlatformCategoryDelete(StrToInt(payload.Args[1]))
+            err :=  platformcategory.PlatformCategoryDelete(payload.Args[1])
             if (err != nil) {
                 log.Println("Error", err)
                 ServiceResponseError(req, fmt.Sprintf("Error calling PlatformCategoryDelete: %s", err))

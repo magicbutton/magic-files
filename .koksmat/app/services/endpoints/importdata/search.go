@@ -20,6 +20,6 @@ import (
 func ImportDataSearch(query string) (*Page[importdatamodel.ImportData], error) {
     log.Println("Calling ImportDatasearch")
 
-    return applogic.Search[database.ImportData, importdatamodel.ImportData]("name", query, applogic.MapImportDataOutgoing)
+    return applogic.Search[database.ImportData, importdatamodel.ImportData]("searchindex", query, applogic.MapImportDataOutgoing)
 
 }

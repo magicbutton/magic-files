@@ -20,9 +20,10 @@ func MapPlatformCategoryOutgoing(db database.PlatformCategory) platformcategorym
     return platformcategorymodel.PlatformCategory{
         ID:        db.ID,
         CreatedAt: db.CreatedAt,
+        CreatedBy: db.CreatedBy,
         UpdatedAt: db.UpdatedAt,
-                Tenant : db.Tenant,
-        Name : db.Name,
+        UpdatedBy: db.UpdatedBy,
+                Name : db.Name,
         Description : db.Description,
 
     }
@@ -32,10 +33,12 @@ func MapPlatformCategoryIncoming(in platformcategorymodel.PlatformCategory) data
     return database.PlatformCategory{
         ID:        in.ID,
         CreatedAt: in.CreatedAt,
+        CreatedBy: in.CreatedBy,
         UpdatedAt: in.UpdatedAt,
-                Tenant : in.Tenant,
-        Name : in.Name,
+        UpdatedBy: in.UpdatedBy,
+                Name : in.Name,
         Description : in.Description,
+        Searchindex : in.Name,
 
     }
 }
