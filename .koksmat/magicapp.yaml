@@ -459,6 +459,16 @@ entities:
         type: string
         required: false
 
+  connection: &connection
+    name: connection
+    description: Connection
+    baselineattributes: *recordAttributesWithURL
+    additionalattributes:
+      - name: data
+        type: json
+        hidden: false
+        required: false
+
   job: &job
     name: job
     description: Job
@@ -472,6 +482,10 @@ entities:
         required: true
       - name: type
         type: string
+        required: true
+      - name: connection
+        type: reference
+        entity: *connection
         required: true
       - name: data
         type: json
@@ -668,4 +682,13 @@ services:
       model: batch
       objectname: Batch
       entity: *batch
+    methods: *itemMethods
+
+  - name: connection
+    description: Manage connections
+    entity:
+      type: record
+      model: connection
+      objectname: Connection
+      entity: *connection
     methods: *itemMethods
