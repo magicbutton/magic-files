@@ -39,13 +39,18 @@ function env($name, $value ) {
 
 
 
-# $envs += env "PNPAPPID" $env:PNPAPPID
-# $envs += env "PNPTENANTID" $env:PNPTENANTID
-# $envs += env "PNPCERTIFICATE" $env:PNPCERTIFICATE
-# $envs += env "PNPSITE" $env:PNPSITE
-# $envs += env "SITEURL" $env:SITEURL
+$envs += env "EXCHCERTIFICATEPASSWORD" $env:EXCHCERTIFICATEPASSWORD
+$envs += env "EXCHAPPID" $env:EXCHAPPID
+$envs += env "EXCHORGANIZATION" $env:EXCHORGANIZATION
+$envs += env "EXCHCERTIFICATE" $env:EXCHCERTIFICATE
+$envs += env "PNPAPPID" $env:PNPAPPID
+$envs += env "PNPTENANTID" $env:PNPTENANTID
+$envs += env "PNPCERTIFICATE" $env:PNPCERTIFICATE
+$envs += env "PNPSITE" $env:PNPSITE
+$envs += env "SITEURL" $env:SITEURL
 $envs += env "NATS" "nats://nats:4222"
 $envs += env "POSTGRES_DB" $env:POSTGRES_DB
+$envs += env "PGPASSWORD" $env:PGPASSWORD
 $configEnv = ""
 foreach ($item in $envs) {
 

@@ -93,3 +93,5 @@ while ($true) {
 
 Write-LogFile "END: Retrieving audit records between $($start) and $($end), RecordType=$record, PageSize=$resultSize, total count: $totalCount."
 Write-Host "Script complete! Finished retrieving audit records for the date range between $($start) and $($end). Total count: $totalCount" -foregroundColor Green
+
+psql -h magicbox.postgres.database.azure.com -U pgadmin   -d files -f "$PSScriptRoot/importauditlog.sql"
