@@ -83,8 +83,13 @@ spec:
         app: $appname-app
     spec: 
       containers:
-      - name: $appname-app
+      - name: $appname-app        
         image: $image
+        resources:
+          requests:
+            memory: "200Mi"
+          limits:
+            memory: "1Gi"
         command: [$appname]
         args: ["service","-v"]               
         env:

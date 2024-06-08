@@ -11,7 +11,7 @@ ENV GOBIN="/usr/local/bin"
 ENV PATH="/usr/lib/go-1.21/bin:${PATH}"
 
 ENV KITCHEN_HOME="/kitchens"
-RUN go install github.com/koksmat-com/koksmat@v2.1.4.19
+RUN go install github.com/koksmat-com/koksmat@v2.1.5.19
 RUN koksmat context init 
 WORKDIR /kitchens
 COPY ./.koksmat/kitchenroot .
