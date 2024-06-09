@@ -16,17 +16,17 @@ func main() {
 	name := s1[len(s1)-1]
 	description := `---
 title: magic-files
-description: Describe the main purpose of this kitchen
+description: Tool for managing files and directories, especially reporting.
 ---
 
-# magic-files
+# magic-mix
 `
 	utils.Setup(".env")
 	magicapp.RegisterServeCmd("magic-files", description, "0.0.1", 8080)
 	magicapp.RegisterCmds()
 	magicapp.RegisterServiceCmd()
 	magicapp.RegisterImportCmd()
-	magicapp.RegisterDownloadCmd()
+
 	utils.RootCmd.PersistentFlags().BoolVarP(&utils.Verbose, "verbose", "v", false, "verbose output")
 
 	magicapp.Execute(name, "magic-files", "")
