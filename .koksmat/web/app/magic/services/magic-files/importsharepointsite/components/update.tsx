@@ -4,34 +4,30 @@ set the Front Matter property ´keep´ to ´true´ syntax for the code snippet
 ---
 keep: false
 ---
-*/
+*/ 
 "use client";
 // piratos
-import { useService } from "@/app/koksmat/useservice";
+import { useService } from "@/koksmat/useservice";
 import { useState } from "react";
-import { ImportSharePointSiteForm } from "./form";
+import {ImportSharePointSiteForm} from "./form";
 
-import { ImportSharePointSiteItem } from "../applogic/model";
+import {ImportSharePointSiteItem} from "../applogic/model";
 export default function UpdateImportSharePointSite(props: { id: number }) {
-  const { id } = props;
-
-  const [transactionId, settransactionId] = useState(0);
-  const readResult = useService<ImportSharePointSiteItem>(
-    "magic-files.importsharepointsite",
-    ["read", id?.toString()],
-    "",
-    6000,
-    transactionId.toString()
-  );
-  const importsharepointsite = readResult.data;
-  return (
-    <div>
-      {importsharepointsite && (
-        <ImportSharePointSiteForm
-          importsharepointsite={importsharepointsite}
-          editmode="update"
-        />
-      )}
-    </div>
-  );
+    const { id } = props;
+ 
+    const [transactionId, settransactionId] = useState(0);
+    const readResult = useService<ImportSharePointSiteItem>(
+      "magic-files.importsharepointsite",
+      ["read", id?.toString()],
+      "",
+      6000,
+      transactionId.toString()
+    );
+    const importsharepointsite = readResult.data;
+    return (
+      <div>{importsharepointsite && 
+      <ImportSharePointSiteForm importsharepointsite={importsharepointsite} editmode="update"/>}
+     
+      </div>
+    );
 }

@@ -17,7 +17,7 @@ keep: false
     func TestContainerdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := container.ContainerDelete(-1)
+        err := container.ContainerDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

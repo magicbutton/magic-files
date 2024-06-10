@@ -18,6 +18,7 @@ export interface AppMap {
     services: Service[]
 }
 export const pagemap : AppMap = {
+  "name": "files",
   "services": [
     {
       "name": "user",
@@ -278,8 +279,27 @@ export const pagemap : AppMap = {
           "name": "search"
         }
       ]
+    },
+    {
+      "name": "connection",
+      "endpoints": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "create"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "search"
+        }
+      ]
     }
-  ],
-  "name": "files"
+  ]
 }
 

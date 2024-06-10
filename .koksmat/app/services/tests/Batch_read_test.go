@@ -16,7 +16,7 @@ keep: false
     
     func TestBatchread(t *testing.T) {
                     
-            result,err := batch.BatchRead(-1)
+            result,err := batch.BatchRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

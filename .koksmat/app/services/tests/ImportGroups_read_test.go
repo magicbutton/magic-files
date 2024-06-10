@@ -16,7 +16,7 @@ keep: false
     
     func TestImportGroupsread(t *testing.T) {
                     
-            result,err := importgroups.ImportGroupsRead(-1)
+            result,err := importgroups.ImportGroupsRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

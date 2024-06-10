@@ -173,6 +173,23 @@ export function JobForm(props : {job: JobItem,editmode:"create"|"update"}) {
    </FormItem>
  )}
 />
+    {/* reference */}<FormField
+ control={form.control}
+ name="connection_id"
+ render={({ field }) => (
+   <FormItem>
+     <FormLabel>connection</FormLabel>
+     <FormControl>
+       <Input placeholder="" {...field} />
+
+     </FormControl>
+     <FormDescription>
+       
+     </FormDescription>
+     <FormMessage />
+   </FormItem>
+ )}
+/>
     {/* json */}<FormField
  control={form.control}
  name="data"

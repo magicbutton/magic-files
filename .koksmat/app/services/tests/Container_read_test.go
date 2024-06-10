@@ -16,7 +16,7 @@ keep: false
     
     func TestContainerread(t *testing.T) {
                     
-            result,err := container.ContainerRead(-1)
+            result,err := container.ContainerRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

@@ -17,7 +17,7 @@ keep: false
     func TestImportSharePointSitedelete(t *testing.T) {
                 // noma4.1.1
         
-        err := importsharepointsite.ImportSharePointSiteDelete(-1)
+        err := importsharepointsite.ImportSharePointSiteDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

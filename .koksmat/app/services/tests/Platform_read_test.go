@@ -16,7 +16,7 @@ keep: false
     
     func TestPlatformread(t *testing.T) {
                     
-            result,err := platform.PlatformRead(-1)
+            result,err := platform.PlatformRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

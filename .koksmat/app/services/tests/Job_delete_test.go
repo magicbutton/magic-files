@@ -17,7 +17,7 @@ keep: false
     func TestJobdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := job.JobDelete(-1)
+        err := job.JobDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

@@ -17,7 +17,7 @@ keep: false
     func TestRelationdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := relation.RelationDelete(-1)
+        err := relation.RelationDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

@@ -1411,6 +1411,48 @@
         }
       ]
     },
+    "connection": {
+      "name": "connection",
+      "description": "Connection",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "data",
+          "type": "json",
+          "hidden": false,
+          "required": false
+        }
+      ]
+    },
     "job": {
       "name": "job",
       "description": "Job",
@@ -1458,6 +1500,53 @@
         {
           "name": "type",
           "type": "string",
+          "required": true
+        },
+        {
+          "name": "connection",
+          "type": "reference",
+          "entity": {
+            "name": "connection",
+            "description": "Connection",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "data",
+                "type": "json",
+                "hidden": false,
+                "required": false
+              }
+            ]
+          },
           "required": true
         },
         {
@@ -1567,6 +1656,53 @@
               {
                 "name": "type",
                 "type": "string",
+                "required": true
+              },
+              {
+                "name": "connection",
+                "type": "reference",
+                "entity": {
+                  "name": "connection",
+                  "description": "Connection",
+                  "baselineattributes": [
+                    {
+                      "name": "tenant",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "type": "string",
+                      "required": false
+                    },
+                    {
+                      "name": "url",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "searchindex",
+                      "type": "string",
+                      "displayname": "Search Index",
+                      "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                      "hidden": true,
+                      "required": true
+                    }
+                  ],
+                  "additionalattributes": [
+                    {
+                      "name": "data",
+                      "type": "json",
+                      "hidden": false,
+                      "required": false
+                    }
+                  ]
+                },
                 "required": true
               },
               {
@@ -3852,6 +3988,53 @@
               "required": true
             },
             {
+              "name": "connection",
+              "type": "reference",
+              "entity": {
+                "name": "connection",
+                "description": "Connection",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "data",
+                    "type": "json",
+                    "hidden": false,
+                    "required": false
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
               "name": "data",
               "type": "json",
               "hidden": false,
@@ -4047,6 +4230,53 @@
                     "required": true
                   },
                   {
+                    "name": "connection",
+                    "type": "reference",
+                    "entity": {
+                      "name": "connection",
+                      "description": "Connection",
+                      "baselineattributes": [
+                        {
+                          "name": "tenant",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "description",
+                          "type": "string",
+                          "required": false
+                        },
+                        {
+                          "name": "url",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "searchindex",
+                          "type": "string",
+                          "displayname": "Search Index",
+                          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                          "hidden": true,
+                          "required": true
+                        }
+                      ],
+                      "additionalattributes": [
+                        {
+                          "name": "data",
+                          "type": "json",
+                          "hidden": false,
+                          "required": false
+                        }
+                      ]
+                    },
+                    "required": true
+                  },
+                  {
                     "name": "data",
                     "type": "json",
                     "hidden": false,
@@ -4061,6 +4291,134 @@
               "type": "json",
               "hidden": true,
               "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "connection",
+      "description": "Manage connections",
+      "entity": {
+        "type": "record",
+        "model": "connection",
+        "objectname": "Connection",
+        "entity": {
+          "name": "connection",
+          "description": "Connection",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "data",
+              "type": "json",
+              "hidden": false,
+              "required": false
             }
           ]
         }

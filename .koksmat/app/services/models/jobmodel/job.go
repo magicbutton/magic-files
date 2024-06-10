@@ -5,12 +5,12 @@ set the Front Matter property ´keep´ to ´true´ syntax for the code snippet
 keep: false
 ---
 */   
-//GenerateGoModel v1
+//GenerateGoModel v2
 package jobmodel
 import (
 	"encoding/json"
 	"time"
-    // 
+    // "github.com/magicbutton/magic-files/database/databasetypes"
 )
 
 func UnmarshalJob(data []byte) (Job, error) {
@@ -36,6 +36,7 @@ type Job struct {
     Status string `json:"status"`
     Prefix string `json:"prefix"`
     Type string `json:"type"`
+    Connection_id int `json:"connection_id"`
     Data interface{} `json:"data"`
 
 }

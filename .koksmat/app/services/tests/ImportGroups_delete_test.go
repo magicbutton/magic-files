@@ -17,7 +17,7 @@ keep: false
     func TestImportGroupsdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := importgroups.ImportGroupsDelete(-1)
+        err := importgroups.ImportGroupsDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

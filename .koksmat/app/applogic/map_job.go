@@ -30,6 +30,7 @@ func MapJobOutgoing(db database.Job) jobmodel.Job {
         Status : db.Status,
         Prefix : db.Prefix,
         Type : db.Type,
+                Connection_id : db.Connection_id,
         Data : db.Data,
 
     }
@@ -49,6 +50,7 @@ func MapJobIncoming(in jobmodel.Job) database.Job {
         Status : in.Status,
         Prefix : in.Prefix,
         Type : in.Type,
+                Connection_id : in.Connection_id,
         Data : in.Data,
         Searchindex : in.Name,
 

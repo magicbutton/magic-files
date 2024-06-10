@@ -16,14 +16,13 @@ func ImportFiles(filepath string) (*importdatamodel.ImportData, error) {
 	}
 
 	OpenDatabase()
-	text := string(data)
 
 	importRecord := importdatamodel.ImportData{
 		Name:        filepath,
 		Description: "Imported file",
 		User_id:     1,
 		Tenant:      "",
-		Data:        []byte(text),
+		Data:        data,
 	}
 	return importdata.ImportDataCreate(importRecord)
 

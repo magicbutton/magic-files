@@ -17,7 +17,7 @@ keep: false
     func TestImportSharedMailboxdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := importsharedmailbox.ImportSharedMailboxDelete(-1)
+        err := importsharedmailbox.ImportSharedMailboxDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

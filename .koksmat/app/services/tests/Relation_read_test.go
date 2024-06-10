@@ -16,7 +16,7 @@ keep: false
     
     func TestRelationread(t *testing.T) {
                     
-            result,err := relation.RelationRead(-1)
+            result,err := relation.RelationRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

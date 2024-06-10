@@ -26,4 +26,5 @@ func RegisterServiceEndpoints(root micro.Group) {
         root.AddEndpoint("importsharedmailbox", micro.HandlerFunc(services.HandleImportSharedMailboxRequests))
         root.AddEndpoint("job", micro.HandlerFunc(services.HandleJobRequests))
         root.AddEndpoint("batch", micro.HandlerFunc(services.HandleBatchRequests))
+        root.AddEndpoint("connection", micro.HandlerFunc(services.HandleConnectionRequests))
     }

@@ -16,7 +16,7 @@ keep: false
     
     func TestImportSharePointSiteread(t *testing.T) {
                     
-            result,err := importsharepointsite.ImportSharePointSiteRead(-1)
+            result,err := importsharepointsite.ImportSharePointSiteRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

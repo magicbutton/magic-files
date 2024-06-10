@@ -17,7 +17,7 @@ keep: false
     func TestBatchdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := batch.BatchDelete(-1)
+        err := batch.BatchDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

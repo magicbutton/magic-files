@@ -17,7 +17,7 @@ keep: false
     func TestFiledelete(t *testing.T) {
                 // noma4.1.1
         
-        err := file.FileDelete(-1)
+        err := file.FileDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

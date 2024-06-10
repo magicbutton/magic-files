@@ -16,7 +16,7 @@ keep: false
     
     func TestJobread(t *testing.T) {
                     
-            result,err := job.JobRead(-1)
+            result,err := job.JobRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

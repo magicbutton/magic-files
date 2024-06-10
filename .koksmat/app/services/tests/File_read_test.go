@@ -16,7 +16,7 @@ keep: false
     
     func TestFileread(t *testing.T) {
                     
-            result,err := file.FileRead(-1)
+            result,err := file.FileRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

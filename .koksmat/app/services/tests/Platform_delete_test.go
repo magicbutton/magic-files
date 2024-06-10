@@ -17,7 +17,7 @@ keep: false
     func TestPlatformdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := platform.PlatformDelete(-1)
+        err := platform.PlatformDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

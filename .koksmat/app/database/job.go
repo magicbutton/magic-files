@@ -31,6 +31,7 @@ type Job struct {
     Status string `bun:"status"`
     Prefix string `bun:"prefix"`
     Type string `bun:"type"`
+    Connection_id int `bun:"connection_id"`
     Data interface{} `bun:"data"`
 
 }

@@ -16,7 +16,7 @@ keep: false
     
     func TestImportRelationsread(t *testing.T) {
                     
-            result,err := importrelations.ImportRelationsRead(-1)
+            result,err := importrelations.ImportRelationsRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

@@ -16,7 +16,7 @@ keep: false
     
     func TestPlatformCategoryread(t *testing.T) {
                     
-            result,err := platformcategory.PlatformCategoryRead(-1)
+            result,err := platformcategory.PlatformCategoryRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }

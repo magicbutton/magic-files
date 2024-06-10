@@ -23,6 +23,7 @@ export interface JobItem  {
     status : string ;
     prefix : string ;
     type : string ;
+    connection_id : number ;
     data : object ;
 
 }
@@ -38,6 +39,7 @@ export const JobSchema = z.object({
     status : z.string(), 
     prefix : z.string(), 
     type : z.string(), 
+    connection_id : z.number(), 
     data : z.object({}).optional(), 
 
 });

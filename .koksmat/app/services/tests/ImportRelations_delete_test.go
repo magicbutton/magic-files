@@ -17,7 +17,7 @@ keep: false
     func TestImportRelationsdelete(t *testing.T) {
                 // noma4.1.1
         
-        err := importrelations.ImportRelationsDelete(-1)
+        err := importrelations.ImportRelationsDelete("")
         if err != nil {
             t.Errorf("Error %s", err)
         }

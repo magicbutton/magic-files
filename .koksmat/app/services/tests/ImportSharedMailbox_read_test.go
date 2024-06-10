@@ -16,7 +16,7 @@ keep: false
     
     func TestImportSharedMailboxread(t *testing.T) {
                     
-            result,err := importsharedmailbox.ImportSharedMailboxRead(-1)
+            result,err := importsharedmailbox.ImportSharedMailboxRead("")
             if err != nil {
                 t.Errorf("Error %s", err)
             }
