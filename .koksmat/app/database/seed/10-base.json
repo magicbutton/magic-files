@@ -1,0 +1,22 @@
+{
+  "platforms": {
+    "sharepoint": {
+      "name": "sharepoint"
+    },
+    "exchange": null
+  },
+  "containers": [
+    {
+      "name": "xxxx",
+      "url": "https://xx",
+      "platform": {
+        "name": "sharepoint"
+      }
+    },
+    {
+      "name": "shared mail",
+      "url": "outlook",
+      "platform": null
+    }
+  ]
+}

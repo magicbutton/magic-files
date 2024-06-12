@@ -20,9 +20,8 @@ func ImportFiles(filepath string) (*importdatamodel.ImportData, error) {
 	importRecord := importdatamodel.ImportData{
 		Name:        filepath,
 		Description: "Imported file",
-		User_id:     1,
-		Tenant:      "",
-		Data:        data,
+
+		Data: data,
 	}
 	return importdata.ImportDataCreate(importRecord)
 
