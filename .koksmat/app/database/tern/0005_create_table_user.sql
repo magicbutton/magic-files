@@ -25,6 +25,7 @@ CREATE TABLE public.user
     ,url character varying COLLATE pg_catalog."default"  NOT NULL
     ,searchindex character varying COLLATE pg_catalog."default"  NOT NULL
     ,email character varying COLLATE pg_catalog."default"  NOT NULL
+    ,batchname character varying COLLATE pg_catalog."default" 
 
 
 );

@@ -45,6 +45,7 @@ type Container struct {
     Level14 string `bun:"level14"`
     Level15 string `bun:"level15"`
     Level16 string `bun:"level16"`
+    Batchname string `bun:"batchname"`
 
 }
 

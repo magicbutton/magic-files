@@ -21,6 +21,7 @@ export interface UserItem  {
     description : string ;
     url : string ;
     email : string ;
+    batchname : string ;
 
 }
 
@@ -33,6 +34,7 @@ export const UserSchema = z.object({
     description : z.string().optional(), 
     url : z.string(), 
     email : z.string(), 
+    batchname : z.string().optional(), 
 
 });
 

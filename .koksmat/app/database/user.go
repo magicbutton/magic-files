@@ -29,6 +29,7 @@ type User struct {
     Url string `bun:"url"`
     Searchindex string `bun:"searchindex"`
     Email string `bun:"email"`
+    Batchname string `bun:"batchname"`
 
 }
 

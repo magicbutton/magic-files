@@ -26,6 +26,7 @@ CREATE TABLE public.relation
     ,user_id int   NOT NULL
     ,date character varying COLLATE pg_catalog."default"   NOT NULL
     ,type character varying COLLATE pg_catalog."default"  NOT NULL
+    ,batchname character varying COLLATE pg_catalog."default" 
 
 
 );

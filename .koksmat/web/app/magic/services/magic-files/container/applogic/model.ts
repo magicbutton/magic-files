@@ -37,6 +37,7 @@ export interface ContainerItem  {
     level14 : string ;
     level15 : string ;
     level16 : string ;
+    batchname : string ;
 
 }
 
@@ -65,6 +66,7 @@ export const ContainerSchema = z.object({
     level14 : z.string().optional(), 
     level15 : z.string().optional(), 
     level16 : z.string().optional(), 
+    batchname : z.string().optional(), 
 
 });
 

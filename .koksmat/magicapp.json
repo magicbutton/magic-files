@@ -532,6 +532,11 @@
           "name": "level16",
           "type": "string",
           "required": false
+        },
+        {
+          "name": "batchname",
+          "type": "string",
+          "required": false
         }
       ]
     },
@@ -693,6 +698,11 @@
           "name": "level16",
           "type": "string",
           "required": false
+        },
+        {
+          "name": "batchname",
+          "type": "string",
+          "required": false
         }
       ]
     },
@@ -734,6 +744,11 @@
           "name": "email",
           "type": "string",
           "required": true
+        },
+        {
+          "name": "batchname",
+          "type": "string",
+          "required": false
         }
       ]
     },
@@ -811,6 +826,11 @@
                 "name": "email",
                 "type": "string",
                 "required": true
+              },
+              {
+                "name": "batchname",
+                "type": "string",
+                "required": false
               }
             ]
           },
@@ -987,10 +1007,304 @@
                 "name": "level16",
                 "type": "string",
                 "required": false
+              },
+              {
+                "name": "batchname",
+                "type": "string",
+                "required": false
               }
             ]
           },
           "required": false
+        },
+        {
+          "name": "batchname",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    "events": {
+      "name": "events",
+      "description": "Events",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "type",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "data",
+          "type": "json",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "eventDate",
+          "type": "datetime",
+          "required": true
+        },
+        {
+          "name": "user",
+          "type": "reference",
+          "entity": {
+            "name": "user",
+            "description": "User",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "email",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "batchname",
+                "type": "string",
+                "required": false
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "operation",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "batchname",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "file",
+          "type": "reference",
+          "entity": {
+            "name": "file",
+            "description": "File",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "url",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "type",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "size",
+                "type": "int",
+                "required": true
+              },
+              {
+                "name": "extension",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "createdby",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "created",
+                "type": "datetime",
+                "required": false
+              },
+              {
+                "name": "modified",
+                "type": "datetime",
+                "required": false
+              },
+              {
+                "name": "modifiedby",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "version",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "published",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "name": "level1",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level2",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level3",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level4",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level5",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level6",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level7",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level8",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level9",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level10",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level11",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level12",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level13",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level14",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level15",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "level16",
+                "type": "string",
+                "required": false
+              },
+              {
+                "name": "batchname",
+                "type": "string",
+                "required": false
+              }
+            ]
+          },
+          "required": true
         }
       ]
     },
@@ -1028,697 +1342,9 @@
       ],
       "additionalattributes": [
         {
-          "name": "user",
-          "type": "reference",
-          "entity": {
-            "name": "user",
-            "description": "User",
-            "baselineattributes": [
-              {
-                "name": "tenant",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "required": false
-              },
-              {
-                "name": "url",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "searchindex",
-                "type": "string",
-                "displayname": "Search Index",
-                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                "hidden": true,
-                "required": true
-              }
-            ],
-            "additionalattributes": [
-              {
-                "name": "email",
-                "type": "string",
-                "required": true
-              }
-            ]
-          },
-          "required": false
-        },
-        {
-          "name": "data",
-          "type": "json",
-          "hidden": true,
-          "required": true
-        }
-      ]
-    },
-    "importsharepointsite": {
-      "name": "importsharepointsite",
-      "description": "Import SharePoint Site",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "displayname": "Tenant",
-          "hidden": true,
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "displayname": "Name",
-          "required": true
-        },
-        {
-          "name": "description",
-          "displayname": "Description",
-          "type": "string",
-          "required": false
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "isteamsconnected",
-          "type": "boolean",
-          "required": false
-        },
-        {
-          "name": "localeid",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "hubsiteid",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "status",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "title",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "lastcontentmodified",
-          "type": "datetime",
-          "required": false
-        },
-        {
-          "name": "releatedgroupid",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "groupid",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "isteamschannelconnected",
-          "type": "boolean",
-          "required": false
-        },
-        {
-          "name": "ishubsite",
-          "type": "boolean",
-          "required": false
-        },
-        {
-          "name": "sharingcapability",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "owner",
-          "type": "string",
-          "required": false
-        }
-      ]
-    },
-    "importgroups": {
-      "name": "importgroups",
-      "description": "Import Groups",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "groupid",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "required": false
-        }
-      ]
-    },
-    "importrelations": {
-      "name": "importrelations",
-      "description": "Import Relations",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "user",
-          "type": "reference",
-          "entity": {
-            "name": "user",
-            "description": "User",
-            "baselineattributes": [
-              {
-                "name": "tenant",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "required": false
-              },
-              {
-                "name": "url",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "searchindex",
-                "type": "string",
-                "displayname": "Search Index",
-                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                "hidden": true,
-                "required": true
-              }
-            ],
-            "additionalattributes": [
-              {
-                "name": "email",
-                "type": "string",
-                "required": true
-              }
-            ]
-          },
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "importgroup_id",
-          "type": "reference",
-          "entity": {
-            "name": "importgroups",
-            "description": "Import Groups",
-            "baselineattributes": [
-              {
-                "name": "tenant",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "required": false
-              },
-              {
-                "name": "url",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "searchindex",
-                "type": "string",
-                "displayname": "Search Index",
-                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                "hidden": true,
-                "required": true
-              }
-            ],
-            "additionalattributes": [
-              {
-                "name": "groupid",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "type",
-                "type": "string",
-                "required": false
-              }
-            ]
-          },
-          "required": true
-        }
-      ]
-    },
-    "importsharedmailbox": {
-      "name": "importsharedmailbox",
-      "description": "Import Shared Mailbox",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "email",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "owners",
-          "type": "string",
-          "required": false
-        }
-      ]
-    },
-    "connection": {
-      "name": "connection",
-      "description": "Connection",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
           "name": "data",
           "type": "json",
           "hidden": false,
-          "required": false
-        }
-      ]
-    },
-    "job": {
-      "name": "job",
-      "description": "Job",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "status",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "prefix",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "connection",
-          "type": "reference",
-          "entity": {
-            "name": "connection",
-            "description": "Connection",
-            "baselineattributes": [
-              {
-                "name": "tenant",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "required": false
-              },
-              {
-                "name": "url",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "searchindex",
-                "type": "string",
-                "displayname": "Search Index",
-                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                "hidden": true,
-                "required": true
-              }
-            ],
-            "additionalattributes": [
-              {
-                "name": "data",
-                "type": "json",
-                "hidden": false,
-                "required": false
-              }
-            ]
-          },
-          "required": true
-        },
-        {
-          "name": "data",
-          "type": "json",
-          "hidden": false,
-          "required": false
-        }
-      ]
-    },
-    "task": {
-      "name": "batch",
-      "description": "Batch",
-      "baselineattributes": [
-        {
-          "name": "tenant",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "description",
-          "type": "string",
-          "required": false
-        },
-        {
-          "name": "url",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "searchindex",
-          "type": "string",
-          "displayname": "Search Index",
-          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-          "hidden": true,
-          "required": true
-        }
-      ],
-      "additionalattributes": [
-        {
-          "name": "status",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "scheduledstart",
-          "type": "datetime",
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "job",
-          "type": "reference",
-          "entity": {
-            "name": "job",
-            "description": "Job",
-            "baselineattributes": [
-              {
-                "name": "tenant",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "name",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "description",
-                "type": "string",
-                "required": false
-              },
-              {
-                "name": "url",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "searchindex",
-                "type": "string",
-                "displayname": "Search Index",
-                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                "hidden": true,
-                "required": true
-              }
-            ],
-            "additionalattributes": [
-              {
-                "name": "status",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "prefix",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "type",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "connection",
-                "type": "reference",
-                "entity": {
-                  "name": "connection",
-                  "description": "Connection",
-                  "baselineattributes": [
-                    {
-                      "name": "tenant",
-                      "type": "string",
-                      "required": true
-                    },
-                    {
-                      "name": "name",
-                      "type": "string",
-                      "required": true
-                    },
-                    {
-                      "name": "description",
-                      "type": "string",
-                      "required": false
-                    },
-                    {
-                      "name": "url",
-                      "type": "string",
-                      "required": true
-                    },
-                    {
-                      "name": "searchindex",
-                      "type": "string",
-                      "displayname": "Search Index",
-                      "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                      "hidden": true,
-                      "required": true
-                    }
-                  ],
-                  "additionalattributes": [
-                    {
-                      "name": "data",
-                      "type": "json",
-                      "hidden": false,
-                      "required": false
-                    }
-                  ]
-                },
-                "required": true
-              },
-              {
-                "name": "data",
-                "type": "json",
-                "hidden": false,
-                "required": false
-              }
-            ]
-          },
-          "required": true
-        },
-        {
-          "name": "data",
-          "type": "json",
-          "hidden": true,
           "required": true
         }
       ]
@@ -1849,6 +1475,11 @@
               "name": "email",
               "type": "string",
               "required": true
+            },
+            {
+              "name": "batchname",
+              "type": "string",
+              "required": false
             }
           ]
         }
@@ -2412,6 +2043,11 @@
               "name": "level16",
               "type": "string",
               "required": false
+            },
+            {
+              "name": "batchname",
+              "type": "string",
+              "required": false
             }
           ]
         }
@@ -2575,6 +2211,11 @@
                     "name": "email",
                     "type": "string",
                     "required": true
+                  },
+                  {
+                    "name": "batchname",
+                    "type": "string",
+                    "required": false
                   }
                 ]
               },
@@ -2751,9 +2392,19 @@
                     "name": "level16",
                     "type": "string",
                     "required": false
+                  },
+                  {
+                    "name": "batchname",
+                    "type": "string",
+                    "required": false
                   }
                 ]
               },
+              "required": false
+            },
+            {
+              "name": "batchname",
+              "type": "string",
               "required": false
             }
           ]
@@ -3002,6 +2653,381 @@
               "name": "level16",
               "type": "string",
               "required": false
+            },
+            {
+              "name": "batchname",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "events",
+      "description": "Manage events",
+      "entity": {
+        "type": "record",
+        "model": "events",
+        "objectname": "Events",
+        "entity": {
+          "name": "events",
+          "description": "Events",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "url",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "type",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "data",
+              "type": "json",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "eventDate",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "user",
+              "type": "reference",
+              "entity": {
+                "name": "user",
+                "description": "User",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "email",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "batchname",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "operation",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "batchname",
+              "type": "string",
+              "required": false
+            },
+            {
+              "name": "file",
+              "type": "reference",
+              "entity": {
+                "name": "file",
+                "description": "File",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "url",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "type",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "size",
+                    "type": "int",
+                    "required": true
+                  },
+                  {
+                    "name": "extension",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "createdby",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "created",
+                    "type": "datetime",
+                    "required": false
+                  },
+                  {
+                    "name": "modified",
+                    "type": "datetime",
+                    "required": false
+                  },
+                  {
+                    "name": "modifiedby",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "version",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "published",
+                    "type": "boolean",
+                    "required": false
+                  },
+                  {
+                    "name": "level1",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level2",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level3",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level4",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level5",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level6",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level7",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level8",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level9",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level10",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level11",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level12",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level13",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level14",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level15",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "level16",
+                    "type": "string",
+                    "required": false
+                  },
+                  {
+                    "name": "batchname",
+                    "type": "string",
+                    "required": false
+                  }
+                ]
+              },
+              "required": true
             }
           ]
         }
@@ -3086,7 +3112,7 @@
     },
     {
       "name": "importdata",
-      "description": "Import data",
+      "description": "Manage import data",
       "entity": {
         "type": "record",
         "model": "importdata",
@@ -3125,1300 +3151,10 @@
           ],
           "additionalattributes": [
             {
-              "name": "user",
-              "type": "reference",
-              "entity": {
-                "name": "user",
-                "description": "User",
-                "baselineattributes": [
-                  {
-                    "name": "tenant",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "description",
-                    "type": "string",
-                    "required": false
-                  },
-                  {
-                    "name": "url",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "searchindex",
-                    "type": "string",
-                    "displayname": "Search Index",
-                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                    "hidden": true,
-                    "required": true
-                  }
-                ],
-                "additionalattributes": [
-                  {
-                    "name": "email",
-                    "type": "string",
-                    "required": true
-                  }
-                ]
-              },
-              "required": false
-            },
-            {
-              "name": "data",
-              "type": "json",
-              "hidden": true,
-              "required": true
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "importsharepointsite",
-      "description": "Import SharePoint Site",
-      "entity": {
-        "type": "record",
-        "model": "importsharepointsite",
-        "objectname": "ImportSharePointSite",
-        "entity": {
-          "name": "importsharepointsite",
-          "description": "Import SharePoint Site",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "displayname": "Tenant",
-              "hidden": true,
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "displayname": "Name",
-              "required": true
-            },
-            {
-              "name": "description",
-              "displayname": "Description",
-              "type": "string",
-              "required": false
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "isteamsconnected",
-              "type": "boolean",
-              "required": false
-            },
-            {
-              "name": "localeid",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "hubsiteid",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "status",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "title",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "lastcontentmodified",
-              "type": "datetime",
-              "required": false
-            },
-            {
-              "name": "releatedgroupid",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "groupid",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "isteamschannelconnected",
-              "type": "boolean",
-              "required": false
-            },
-            {
-              "name": "ishubsite",
-              "type": "boolean",
-              "required": false
-            },
-            {
-              "name": "sharingcapability",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "owner",
-              "type": "string",
-              "required": false
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "importgroups",
-      "description": "Import Groups",
-      "entity": {
-        "type": "record",
-        "model": "importgroups",
-        "objectname": "ImportGroups",
-        "entity": {
-          "name": "importgroups",
-          "description": "Import Groups",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "groupid",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "type",
-              "type": "string",
-              "required": false
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "importrelations",
-      "description": "Import Relations",
-      "entity": {
-        "type": "record",
-        "model": "importrelations",
-        "objectname": "ImportRelations",
-        "entity": {
-          "name": "importrelations",
-          "description": "Import Relations",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "user",
-              "type": "reference",
-              "entity": {
-                "name": "user",
-                "description": "User",
-                "baselineattributes": [
-                  {
-                    "name": "tenant",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "description",
-                    "type": "string",
-                    "required": false
-                  },
-                  {
-                    "name": "url",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "searchindex",
-                    "type": "string",
-                    "displayname": "Search Index",
-                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                    "hidden": true,
-                    "required": true
-                  }
-                ],
-                "additionalattributes": [
-                  {
-                    "name": "email",
-                    "type": "string",
-                    "required": true
-                  }
-                ]
-              },
-              "required": true
-            },
-            {
-              "name": "type",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "importgroup_id",
-              "type": "reference",
-              "entity": {
-                "name": "importgroups",
-                "description": "Import Groups",
-                "baselineattributes": [
-                  {
-                    "name": "tenant",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "description",
-                    "type": "string",
-                    "required": false
-                  },
-                  {
-                    "name": "url",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "searchindex",
-                    "type": "string",
-                    "displayname": "Search Index",
-                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                    "hidden": true,
-                    "required": true
-                  }
-                ],
-                "additionalattributes": [
-                  {
-                    "name": "groupid",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "type",
-                    "type": "string",
-                    "required": false
-                  }
-                ]
-              },
-              "required": true
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "importsharedmailbox",
-      "description": "Import Shared Mailbox",
-      "entity": {
-        "type": "record",
-        "model": "importsharedmailbox",
-        "objectname": "ImportSharedMailbox",
-        "entity": {
-          "name": "importsharedmailbox",
-          "description": "Import Shared Mailbox",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "email",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "owners",
-              "type": "string",
-              "required": false
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "job",
-      "description": "Manage jobs",
-      "entity": {
-        "type": "record",
-        "model": "job",
-        "objectname": "Job",
-        "entity": {
-          "name": "job",
-          "description": "Job",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "status",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "prefix",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "type",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "connection",
-              "type": "reference",
-              "entity": {
-                "name": "connection",
-                "description": "Connection",
-                "baselineattributes": [
-                  {
-                    "name": "tenant",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "description",
-                    "type": "string",
-                    "required": false
-                  },
-                  {
-                    "name": "url",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "searchindex",
-                    "type": "string",
-                    "displayname": "Search Index",
-                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                    "hidden": true,
-                    "required": true
-                  }
-                ],
-                "additionalattributes": [
-                  {
-                    "name": "data",
-                    "type": "json",
-                    "hidden": false,
-                    "required": false
-                  }
-                ]
-              },
-              "required": true
-            },
-            {
               "name": "data",
               "type": "json",
               "hidden": false,
-              "required": false
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
               "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "batch",
-      "description": "Manage batches",
-      "entity": {
-        "type": "record",
-        "model": "batch",
-        "objectname": "Batch",
-        "entity": {
-          "name": "batch",
-          "description": "Batch",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "status",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "scheduledstart",
-              "type": "datetime",
-              "required": true
-            },
-            {
-              "name": "type",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "job",
-              "type": "reference",
-              "entity": {
-                "name": "job",
-                "description": "Job",
-                "baselineattributes": [
-                  {
-                    "name": "tenant",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "name",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "description",
-                    "type": "string",
-                    "required": false
-                  },
-                  {
-                    "name": "url",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "searchindex",
-                    "type": "string",
-                    "displayname": "Search Index",
-                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                    "hidden": true,
-                    "required": true
-                  }
-                ],
-                "additionalattributes": [
-                  {
-                    "name": "status",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "prefix",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "type",
-                    "type": "string",
-                    "required": true
-                  },
-                  {
-                    "name": "connection",
-                    "type": "reference",
-                    "entity": {
-                      "name": "connection",
-                      "description": "Connection",
-                      "baselineattributes": [
-                        {
-                          "name": "tenant",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "name",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "description",
-                          "type": "string",
-                          "required": false
-                        },
-                        {
-                          "name": "url",
-                          "type": "string",
-                          "required": true
-                        },
-                        {
-                          "name": "searchindex",
-                          "type": "string",
-                          "displayname": "Search Index",
-                          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-                          "hidden": true,
-                          "required": true
-                        }
-                      ],
-                      "additionalattributes": [
-                        {
-                          "name": "data",
-                          "type": "json",
-                          "hidden": false,
-                          "required": false
-                        }
-                      ]
-                    },
-                    "required": true
-                  },
-                  {
-                    "name": "data",
-                    "type": "json",
-                    "hidden": false,
-                    "required": false
-                  }
-                ]
-              },
-              "required": true
-            },
-            {
-              "name": "data",
-              "type": "json",
-              "hidden": true,
-              "required": true
-            }
-          ]
-        }
-      },
-      "methods": [
-        {
-          "name": "read",
-          "description": "Read a single item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "create",
-          "description": "Create a new item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to create",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "update",
-          "description": "Update an existing item",
-          "parameters": [
-            {
-              "name": "item",
-              "description": "The item to update",
-              "type": "object",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "object"
-          }
-        },
-        {
-          "name": "delete",
-          "description": "Delete an existing item",
-          "parameters": [
-            {
-              "name": "id",
-              "description": "The id of the item",
-              "type": "int",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "void"
-          }
-        },
-        {
-          "name": "search",
-          "description": "Search for items",
-          "parameters": [
-            {
-              "name": "query",
-              "description": "The search query",
-              "type": "string",
-              "required": true
-            }
-          ],
-          "returns": {
-            "type": "page"
-          }
-        }
-      ]
-    },
-    {
-      "name": "connection",
-      "description": "Manage connections",
-      "entity": {
-        "type": "record",
-        "model": "connection",
-        "objectname": "Connection",
-        "entity": {
-          "name": "connection",
-          "description": "Connection",
-          "baselineattributes": [
-            {
-              "name": "tenant",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "type": "string",
-              "required": false
-            },
-            {
-              "name": "url",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "searchindex",
-              "type": "string",
-              "displayname": "Search Index",
-              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
-              "hidden": true,
-              "required": true
-            }
-          ],
-          "additionalattributes": [
-            {
-              "name": "data",
-              "type": "json",
-              "hidden": false,
-              "required": false
             }
           ]
         }

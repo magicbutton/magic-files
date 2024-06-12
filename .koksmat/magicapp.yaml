@@ -249,6 +249,10 @@ entities:
       - name: level16
         type: string
         required: false
+      - name: batchname
+        type: string
+        required: false
+
   file: &file
     name: file
     description: File
@@ -332,6 +336,9 @@ entities:
       - name: level16
         type: string
         required: false
+      - name: batchname
+        type: string
+        required: false
 
   user: &user
     name: user
@@ -341,6 +348,9 @@ entities:
       - name: email
         type: string
         required: true
+      - name: batchname
+        type: string
+        required: false
 
   relation: &relation
     name: relation
@@ -361,160 +371,48 @@ entities:
         type: array
         entity: *file
         required: false
+      - name: batchname
+        type: string
+        required: false
+
+  events: &events
+    name: events
+    description: Events
+    baselineattributes: *recordAttributesWithURL
+    additionalattributes:
+      - name: type
+        type: string
+        required: true
+      - name: data
+        type: json
+        hidden: true
+        required: true
+      - name: eventDate
+        type: datetime
+        required: true
+      - name: user
+        type: reference
+        entity: *user
+        required: true
+      - name: operation
+        type: string
+        required: true
+      - name: batchname
+        type: string
+        required: false
+      - name: file
+        type: reference
+        entity: *file
+        required: true
   importdata: &importdata
     name: importdata
     description: Import
     baselineattributes: *recordAttributes
     additionalattributes:
-      - name: user
-        type: reference
-        entity: *user
-        required: false
-      - name: data
-        type: json
-        hidden: true
-        required: true
-
-  importsharepointsite: &importsharepointsite
-    name: importsharepointsite
-    description: Import SharePoint Site
-    baselineattributes: *recordAttributes
-    additionalattributes:
-      - name: isteamsconnected
-        type: boolean
-        required: false
-      - name: localeid
-        type: string
-        required: false
-      - name: hubsiteid
-        type: string
-        required: false
-      - name: status
-        type: string
-        required: false
-      - name: url
-        type: string
-        required: false
-      - name: title
-        type: string
-        required: false
-      - name: lastcontentmodified
-        type: datetime
-        required: false
-      - name: releatedgroupid
-        type: string
-        required: false
-      - name: groupid
-        type: string
-        required: false
-      - name: isteamschannelconnected
-        type: boolean
-        required: false
-      - name: ishubsite
-        type: boolean
-        required: false
-      - name: sharingcapability
-        type: string
-        required: false
-      - name: owner
-        type: string
-        required: false
-
-  importgroups: &importgroups
-    name: importgroups
-    description: Import Groups
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
-      - name: groupid
-        type: string
-        required: true
-      - name: type
-        type: string
-        required: false
-  importrelations: &importrelations
-    name: importrelations
-    description: Import Relations
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
-      - name: user
-        type: reference
-        entity: *user
-        required: true
-      - name: type
-        type: string
-        required: true
-      - name: importgroup_id
-        type: reference
-        entity: *importgroups
-        required: true
-  importsharedmailbox: &importsharedmailbox
-    name: importsharedmailbox
-    description: Import Shared Mailbox
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
-      - name: email
-        type: string
-        required: true
-      - name: owners
-        type: string
-        required: false
-
-  connection: &connection
-    name: connection
-    description: Connection
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
       - name: data
         type: json
         hidden: false
-        required: false
-
-  job: &job
-    name: job
-    description: Job
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
-      - name: status
-        type: string
         required: true
-      - name: prefix
-        type: string
-        required: true
-      - name: type
-        type: string
-        required: true
-      - name: connection
-        type: reference
-        entity: *connection
-        required: true
-      - name: data
-        type: json
-        hidden: false
-        required: false
-  task: &batch
-    name: batch
-    description: Batch
-    baselineattributes: *recordAttributesWithURL
-    additionalattributes:
-      - name: status
-        type: string
-        required: true
-      - name: scheduledstart
-        type: datetime
-        required: true
-      - name: type
-        type: string
-        required: true
-      - name: job
-        type: reference
-        entity: *job
-        required: true
-      # contains the data for the job
-      - name: data
-        type: json
-        hidden: true
-        required: true
-
 models:
   itemMethods: &itemMethods
     - name: read
@@ -621,74 +519,20 @@ services:
       entity: *file
     methods: *itemMethods
 
+  - name: events
+    description: Manage events
+    entity:
+      type: record
+      model: events
+      objectname: Events
+      entity: *events
+    methods: *itemMethods
+
   - name: importdata
-    description: Import data
+    description: Manage import data
     entity:
       type: record
       model: importdata
       objectname: ImportData
       entity: *importdata
-    methods: *itemMethods
-
-  - name: importsharepointsite
-    description: Import SharePoint Site
-    entity:
-      type: record
-      model: importsharepointsite
-      objectname: ImportSharePointSite
-      entity: *importsharepointsite
-    methods: *itemMethods
-
-  - name: importgroups
-    description: Import Groups
-    entity:
-      type: record
-      model: importgroups
-      objectname: ImportGroups
-      entity: *importgroups
-    methods: *itemMethods
-
-  - name: importrelations
-    description: Import Relations
-    entity:
-      type: record
-      model: importrelations
-      objectname: ImportRelations
-      entity: *importrelations
-    methods: *itemMethods
-
-  - name: importsharedmailbox
-    description: Import Shared Mailbox
-    entity:
-      type: record
-      model: importsharedmailbox
-      objectname: ImportSharedMailbox
-      entity: *importsharedmailbox
-    methods: *itemMethods
-
-  - name: job
-    description: Manage jobs
-    entity:
-      type: record
-      model: job
-      objectname: Job
-      entity: *job
-    methods: *itemMethods
-
-  - name: batch
-    description: Manage batches
-    entity:
-      type: record
-      model: batch
-      objectname: Batch
-      entity: *batch
-    methods: *itemMethods
-
-  - name: connection
-    description: Manage connections
-    entity:
-      type: record
-      model: connection
-      objectname: Connection
-      entity: *connection
     methods: *itemMethods

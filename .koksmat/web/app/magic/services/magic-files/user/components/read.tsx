@@ -6,7 +6,7 @@ keep: false
 ---
 */ 
 "use client";
-import { useService } from "@/koksmat/useservice";
+import { useService } from "@/app/koksmat/useservice";
 import { useState } from "react";
 import {UserItem} from "../applogic/model";
 
@@ -43,6 +43,9 @@ export default function ReadUser(props: { id: number }) {
     </div>    <div>
         <div className="font-bold" >email</div>
         <div>{user.email}</div>
+    </div>    <div>
+        <div className="font-bold" >batchname</div>
+        <div>{user.batchname}</div>
     </div>
     <div>
         <div>

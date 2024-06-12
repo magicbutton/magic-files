@@ -34,6 +34,7 @@ type Relation struct {
     User_id int `json:"user_id"`
     Date time.Time `json:"date"`
     Type string `json:"type"`
+    Batchname string `json:"batchname"`
 
 }
 

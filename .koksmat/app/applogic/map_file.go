@@ -48,6 +48,7 @@ func MapFileOutgoing(db database.File) filemodel.File {
         Level14 : db.Level14,
         Level15 : db.Level15,
         Level16 : db.Level16,
+        Batchname : db.Batchname,
 
     }
 }
@@ -84,6 +85,7 @@ func MapFileIncoming(in filemodel.File) database.File {
         Level14 : in.Level14,
         Level15 : in.Level15,
         Level16 : in.Level16,
+        Batchname : in.Batchname,
         Searchindex : in.Name,
 
     }

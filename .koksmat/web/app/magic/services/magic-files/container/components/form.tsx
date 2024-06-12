@@ -411,6 +411,23 @@ export function ContainerForm(props : {container: ContainerItem,editmode:"create
    </FormItem>
  )}
 />
+    {/* string */}<FormField
+ control={form.control}
+ name="batchname"
+ render={({ field }) => (
+   <FormItem>
+     <FormLabel>batchname</FormLabel>
+     <FormControl>
+       <Input placeholder="" {...field} />
+
+     </FormControl>
+     <FormDescription>
+       
+     </FormDescription>
+     <FormMessage />
+   </FormItem>
+ )}
+/>
 
     <div>
    

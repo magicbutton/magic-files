@@ -6,7 +6,7 @@ keep: false
 ---
 */ 
 "use client";
-import { useService } from "@/koksmat/useservice";
+import { useService } from "@/app/koksmat/useservice";
 import { useState } from "react";
 import {RelationItem} from "../applogic/model";
 
@@ -43,6 +43,9 @@ export default function ReadRelation(props: { id: number }) {
     </div>    <div>
         <div className="font-bold" >type</div>
         <div>{relation.type}</div>
+    </div>    <div>
+        <div className="font-bold" >batchname</div>
+        <div>{relation.batchname}</div>
     </div>
     <div>
         <div>

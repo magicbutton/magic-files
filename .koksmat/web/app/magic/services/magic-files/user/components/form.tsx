@@ -139,6 +139,23 @@ export function UserForm(props : {user: UserItem,editmode:"create"|"update"}) {
    </FormItem>
  )}
 />
+    {/* string */}<FormField
+ control={form.control}
+ name="batchname"
+ render={({ field }) => (
+   <FormItem>
+     <FormLabel>batchname</FormLabel>
+     <FormControl>
+       <Input placeholder="" {...field} />
+
+     </FormControl>
+     <FormDescription>
+       
+     </FormDescription>
+     <FormMessage />
+   </FormItem>
+ )}
+/>
 
     <div>
    

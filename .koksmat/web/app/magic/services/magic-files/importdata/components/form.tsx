@@ -88,14 +88,14 @@ export function ImportDataForm(props : {importdata: ImportDataItem,editmode:"cre
    </FormItem>
  )}
 />
-    {/* reference */}<FormField
+    {/* json */}<FormField
  control={form.control}
- name="user_id"
+ name="data"
  render={({ field }) => (
    <FormItem>
-     <FormLabel>user</FormLabel>
+     <FormLabel>data</FormLabel>
      <FormControl>
-       <Input placeholder="" {...field} />
+       {/* <Input placeholder="" {...field} /> */}
 
      </FormControl>
      <FormDescription>

@@ -28,6 +28,7 @@ func MapUserOutgoing(db database.User) usermodel.User {
         Description : db.Description,
         Url : db.Url,
         Email : db.Email,
+        Batchname : db.Batchname,
 
     }
 }
@@ -44,6 +45,7 @@ func MapUserIncoming(in usermodel.User) database.User {
         Description : in.Description,
         Url : in.Url,
         Email : in.Email,
+        Batchname : in.Batchname,
         Searchindex : in.Name,
 
     }

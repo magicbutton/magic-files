@@ -6,7 +6,7 @@ keep: false
 ---
 */ 
 "use client";
-import { useService } from "@/koksmat/useservice";
+import { useService } from "@/app/koksmat/useservice";
 import { useState } from "react";
 import {ContainerItem} from "../applogic/model";
 
@@ -91,6 +91,9 @@ export default function ReadContainer(props: { id: number }) {
     </div>    <div>
         <div className="font-bold" >level16</div>
         <div>{container.level16}</div>
+    </div>    <div>
+        <div className="font-bold" >batchname</div>
+        <div>{container.batchname}</div>
     </div>
     <div>
         <div>

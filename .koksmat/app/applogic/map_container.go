@@ -44,6 +44,7 @@ func MapContainerOutgoing(db database.Container) containermodel.Container {
         Level14 : db.Level14,
         Level15 : db.Level15,
         Level16 : db.Level16,
+        Batchname : db.Batchname,
 
     }
 }
@@ -76,6 +77,7 @@ func MapContainerIncoming(in containermodel.Container) database.Container {
         Level14 : in.Level14,
         Level15 : in.Level15,
         Level16 : in.Level16,
+        Batchname : in.Batchname,
         Searchindex : in.Name,
 
     }

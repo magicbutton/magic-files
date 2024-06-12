@@ -27,6 +27,7 @@ func MapRelationOutgoing(db database.Relation) relationmodel.Relation {
         Description : db.Description,
                 User_id : db.User_id,
         Type : db.Type,
+        Batchname : db.Batchname,
 
     }
 }
@@ -42,6 +43,7 @@ func MapRelationIncoming(in relationmodel.Relation) database.Relation {
         Description : in.Description,
                 User_id : in.User_id,
         Type : in.Type,
+        Batchname : in.Batchname,
         Searchindex : in.Name,
 
     }

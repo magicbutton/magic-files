@@ -58,6 +58,7 @@ type File struct {
     Level14 string `json:"level14"`
     Level15 string `json:"level15"`
     Level16 string `json:"level16"`
+    Batchname string `json:"batchname"`
 
 }
 

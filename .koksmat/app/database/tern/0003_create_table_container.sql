@@ -42,6 +42,7 @@ CREATE TABLE public.container
     ,level14 character varying COLLATE pg_catalog."default" 
     ,level15 character varying COLLATE pg_catalog."default" 
     ,level16 character varying COLLATE pg_catalog."default" 
+    ,batchname character varying COLLATE pg_catalog."default" 
 
 
 );

@@ -18,10 +18,8 @@ export interface AppMap {
     services: Service[]
 }
 export const pagemap : AppMap = {
-  "name": "files",
   "services": [
     {
-      "name": "user",
       "endpoints": [
         {
           "name": "read"
@@ -38,10 +36,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "user"
     },
     {
-      "name": "platformcategory",
       "endpoints": [
         {
           "name": "read"
@@ -58,10 +56,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "platformcategory"
     },
     {
-      "name": "platform",
       "endpoints": [
         {
           "name": "read"
@@ -78,10 +76,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "platform"
     },
     {
-      "name": "container",
       "endpoints": [
         {
           "name": "read"
@@ -98,10 +96,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "container"
     },
     {
-      "name": "relation",
       "endpoints": [
         {
           "name": "read"
@@ -118,10 +116,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "relation"
     },
     {
-      "name": "file",
       "endpoints": [
         {
           "name": "read"
@@ -138,10 +136,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "file"
     },
     {
-      "name": "importdata",
       "endpoints": [
         {
           "name": "read"
@@ -158,10 +156,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
+      ],
+      "name": "events"
     },
     {
-      "name": "importsharepointsite",
       "endpoints": [
         {
           "name": "read"
@@ -178,128 +176,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ]
-    },
-    {
-      "name": "importgroups",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
-    },
-    {
-      "name": "importrelations",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
-    },
-    {
-      "name": "importsharedmailbox",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
-    },
-    {
-      "name": "job",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
-    },
-    {
-      "name": "batch",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
-    },
-    {
-      "name": "connection",
-      "endpoints": [
-        {
-          "name": "read"
-        },
-        {
-          "name": "create"
-        },
-        {
-          "name": "update"
-        },
-        {
-          "name": "delete"
-        },
-        {
-          "name": "search"
-        }
-      ]
+      ],
+      "name": "importdata"
     }
-  ]
+  ],
+  "name": "files"
 }
 

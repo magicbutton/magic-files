@@ -18,7 +18,7 @@ export interface ImportDataItem  {
     updated_by: string;
         name : string ;
     description : string ;
-    user_id : number ;
+    data : object ;
 
 }
 
@@ -28,7 +28,7 @@ export const ImportDataSchema = z.object({
    
         name : z.string(), 
     description : z.string().optional(), 
-    user_id : z.number().optional(), 
+    data : z.object({}), 
 
 });
 

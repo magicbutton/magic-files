@@ -34,6 +34,7 @@ type User struct {
     Description string `json:"description"`
     Url string `json:"url"`
     Email string `json:"email"`
+    Batchname string `json:"batchname"`
 
 }
 

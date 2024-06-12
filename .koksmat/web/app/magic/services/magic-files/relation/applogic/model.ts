@@ -21,6 +21,7 @@ export interface RelationItem  {
     user_id : number ;
     date : string ;
     type : string ;
+    batchname : string ;
 
 }
 
@@ -33,6 +34,7 @@ export const RelationSchema = z.object({
     user_id : z.number(), 
     date : z.string(), 
     type : z.string(), 
+    batchname : z.string().optional(), 
 
 });
 

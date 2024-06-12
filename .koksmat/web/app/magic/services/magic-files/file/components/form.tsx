@@ -547,6 +547,23 @@ export function FileForm(props : {file: FileItem,editmode:"create"|"update"}) {
    </FormItem>
  )}
 />
+    {/* string */}<FormField
+ control={form.control}
+ name="batchname"
+ render={({ field }) => (
+   <FormItem>
+     <FormLabel>batchname</FormLabel>
+     <FormControl>
+       <Input placeholder="" {...field} />
+
+     </FormControl>
+     <FormDescription>
+       
+     </FormDescription>
+     <FormMessage />
+   </FormItem>
+ )}
+/>
 
     <div>
    

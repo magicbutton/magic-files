@@ -30,6 +30,7 @@ type Relation struct {
     User_id int `bun:"user_id"`
     Date time.Time `bun:"date"`
     Type string `bun:"type"`
+    Batchname string `bun:"batchname"`
 
 }
 

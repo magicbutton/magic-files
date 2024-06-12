@@ -6,7 +6,7 @@ keep: false
 ---
 */ 
 "use client";
-import { useService } from "@/koksmat/useservice";
+import { useService } from "@/app/koksmat/useservice";
 import { useState } from "react";
 import {ImportDataItem} from "../applogic/model";
 
@@ -34,10 +34,10 @@ export default function ReadImportData(props: { id: number }) {
     </div>    <div>
         <div className="font-bold" >Description</div>
         <div>{importdata.description}</div>
-    </div>    <div>
-        <div className="font-bold" >user</div>
-        <div>{importdata.user_id}</div>
-    </div>
+    </div>                <div>
+                    <div className="font-bold" >data</div>
+                    <div>{JSON.stringify(importdata.data,null,2)}</div>
+                </div>
     <div>
         <div>
         <div className="font-bold" >id</div>

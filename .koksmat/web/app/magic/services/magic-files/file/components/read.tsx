@@ -6,7 +6,7 @@ keep: false
 ---
 */ 
 "use client";
-import { useService } from "@/koksmat/useservice";
+import { useService } from "@/app/koksmat/useservice";
 import { useState } from "react";
 import {FileItem} from "../applogic/model";
 
@@ -115,6 +115,9 @@ export default function ReadFile(props: { id: number }) {
     </div>    <div>
         <div className="font-bold" >level16</div>
         <div>{file.level16}</div>
+    </div>    <div>
+        <div className="font-bold" >batchname</div>
+        <div>{file.batchname}</div>
     </div>
     <div>
         <div>
