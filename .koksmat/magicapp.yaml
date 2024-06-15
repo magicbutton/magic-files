@@ -413,6 +413,18 @@ entities:
         type: json
         hidden: false
         required: true
+  sql: &sql
+    name: sql
+    description: SQL
+    baselineattributes: *recordAttributes
+    additionalattributes:
+      - name: query
+        type: string
+        required: true
+      - name: schema
+        type: json
+        required: false
+
 models:
   itemMethods: &itemMethods
     - name: read
@@ -535,4 +547,13 @@ services:
       model: importdata
       objectname: ImportData
       entity: *importdata
+    methods: *itemMethods
+
+  - name: sql
+    description: Manage sql
+    entity:
+      type: record
+      model: sql
+      objectname: SQL
+      entity: *sql
     methods: *itemMethods

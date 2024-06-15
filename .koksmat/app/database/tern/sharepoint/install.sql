@@ -1,7 +1,10 @@
-drop schema if exists "seed"
+drop schema if exists "sharepoint";
 -- cascade;
 
-CREATE SCHEMA "seed";
-DELETE FROM importdata where name ilike 'seed%'
-{{ template "seed0".}} 
+CREATE SCHEMA "sharepoint";
 
+{{ template "pageviews.sql".}} 
+{{ template "get_or_create_user.sql".}} 
+
+
+{{ template "importviews.sql".}} 

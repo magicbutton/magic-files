@@ -20,6 +20,7 @@ export interface AppMap {
 export const pagemap : AppMap = {
   "services": [
     {
+      "name": "user",
       "endpoints": [
         {
           "name": "read"
@@ -36,10 +37,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "user"
+      ]
     },
     {
+      "name": "platformcategory",
       "endpoints": [
         {
           "name": "read"
@@ -56,10 +57,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "platformcategory"
+      ]
     },
     {
+      "name": "platform",
       "endpoints": [
         {
           "name": "read"
@@ -76,10 +77,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "platform"
+      ]
     },
     {
+      "name": "container",
       "endpoints": [
         {
           "name": "read"
@@ -96,10 +97,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "container"
+      ]
     },
     {
+      "name": "relation",
       "endpoints": [
         {
           "name": "read"
@@ -116,10 +117,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "relation"
+      ]
     },
     {
+      "name": "file",
       "endpoints": [
         {
           "name": "read"
@@ -136,10 +137,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "file"
+      ]
     },
     {
+      "name": "events",
       "endpoints": [
         {
           "name": "read"
@@ -156,10 +157,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "events"
+      ]
     },
     {
+      "name": "importdata",
       "endpoints": [
         {
           "name": "read"
@@ -176,8 +177,27 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "importdata"
+      ]
+    },
+    {
+      "name": "sql",
+      "endpoints": [
+        {
+          "name": "read"
+        },
+        {
+          "name": "create"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "delete"
+        },
+        {
+          "name": "search"
+        }
+      ]
     }
   ],
   "name": "files"
