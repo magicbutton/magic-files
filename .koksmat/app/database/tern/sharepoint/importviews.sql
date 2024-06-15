@@ -1,9 +1,15 @@
-CREATE OR REPLACE PROCEDURE insert_audit_records()
-LANGUAGE plpgsql
-AS $$
+-- PROCEDURE: public.insert_audit_records()
+
+-- DROP PROCEDURE IF EXISTS public.insert_audit_records();
+
+CREATE OR REPLACE PROCEDURE public.insert_audit_records(
+	)
+LANGUAGE 'plpgsql'
+AS $BODY$
 DECLARE
     record RECORD;
     user_id INT;
+	file_id INT;
 BEGIN
     FOR record IN
         SELECT
@@ -20,7 +26,7 @@ BEGIN
             jsonb_array_elements(data) AS data_element
         WHERE
             name ILIKE 'audit/records%'
-        LIMIT 10 
+
     LOOP
         -- Get or create user
         user_id := get_or_create_user(record.userid);
@@ -52,7 +58,6 @@ BEGIN
         );
     END LOOP;
 END;
-$$;
-
--- To call the procedure
--- CALL insert_audit_records();
+$BODY$;
+ALTER PROCEDURE public.insert_audit_records()
+    OWNER TO pgadmin;
